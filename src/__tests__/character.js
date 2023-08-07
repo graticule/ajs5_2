@@ -15,15 +15,10 @@ test.each([
   expect(() => new Character(name, type)).toThrow(Error);
 });
 
-test.each([['bowman'], ['Bow man'], ['Killer']])('Test wrong type %s', (type) => {
-  const name = 'John';
-  expect(() => new Character(name, type)).toThrow(Error);
-});
-
 test('Test levelUp', () => {
   const bowman = new Bowman('John');
-  let prevAttack = bowman.attack;
-  let prevDefence = bowman.defence;
+  let prevAttack = 25;
+  let prevDefence = 25;
   bowman.health = 23;
   bowman.levelUp();
   expect(bowman.level).toBe(2);

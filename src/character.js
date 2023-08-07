@@ -29,7 +29,7 @@ export default class Character {
 
   levelUp() {
     if (this.health <= 0) {
-      return;
+      throw new Error('cannot level up dead character');
     }
     this.level += 1;
     this.attack *= 1.2;

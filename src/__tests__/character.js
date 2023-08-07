@@ -41,11 +41,7 @@ test('Test levelUp', () => {
   prevAttack = bowman.attack;
   prevDefence = bowman.defence;
   bowman.health = 0;
-  bowman.levelUp();
-  expect(bowman.level).toBe(3);
-  expect(bowman.attack).toBe(prevAttack);
-  expect(bowman.defence).toBe(prevDefence);
-  expect(bowman.health).toBe(0);
+  expect(() => bowman.levelUp()).toThrow(Error);
 });
 
 test('Test damage', () => {

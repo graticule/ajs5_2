@@ -12,3 +12,7 @@ test('Test creating Bowman', () => {
   const bowman = new Bowman('John');
   expect(bowman).toEqual(expectedBowman);
 });
+
+test('Test creating Bowman with wrong type', () => {
+  expect(() => new Bowman('John', 'Bowerman')).toThrow(Error);
+});
